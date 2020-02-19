@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.106.245.51:3306/springcloud?characterEconding=utf-8&useSSL=false
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+  jpa:
+    show-sql: true
+  freemarker:
+    suffix: .ftl #springboot 2.0.x 将freemaker的.ftl 改为.ftlh了
+  redis:
+    host: 47.106.245.51
+    port: 6379
+
+wechat:
+  mpAppId: 1 #微信公众号
+  mpAppSecret: 2 #微信公众号
+  openAppId: 9 #微信开放平台，卖家扫码登录用
+  openAppSecret: 0 #微信开放平台，卖家扫码登录用
+  mchId: 3
+  mchKey: 4
+  keyPath: 5 #退款用
+  notifyUrl: http://����/pay/notify
+  templateId: # 微信推送消息模板id，模板可以有多种样式,下面这个是订单的模板
+    orderStatus: 133
+project-url-config:
+  wechatMpAuth: http://localhost:8080/sell
+  wechatOpenAuth: http://localhost:8080/sell
+  sell: http://localhost:8080/sell
+server:
+  servlet:
+    context-path: /sell
