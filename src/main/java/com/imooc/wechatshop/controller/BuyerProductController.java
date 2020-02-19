@@ -1,8 +1,8 @@
 package com.imooc.wechatshop.controller;
 
-import com.imooc.wechatshop.VO.ProductInfoVO;
-import com.imooc.wechatshop.VO.ProductVO;
-import com.imooc.wechatshop.VO.ResultVO;
+import com.imooc.wechatshop.vo.ProductInfoVO;
+import com.imooc.wechatshop.vo.ProductVO;
+import com.imooc.wechatshop.vo.ResultVO;
 import com.imooc.wechatshop.entity.ProductCategory;
 import com.imooc.wechatshop.entity.ProductInfo;
 import com.imooc.wechatshop.service.ProductCategoryService;

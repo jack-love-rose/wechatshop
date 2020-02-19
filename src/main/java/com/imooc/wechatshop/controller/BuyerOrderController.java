@@ -1,6 +1,6 @@
 package com.imooc.wechatshop.controller;
 
-import com.imooc.wechatshop.VO.ResultVO;
+import com.imooc.wechatshop.vo.ResultVO;
 import com.imooc.wechatshop.converter.OrderForm2OrderDTOConverter;
 import com.imooc.wechatshop.dto.OrderDTO;
 import com.imooc.wechatshop.enums.ResultExceptionEnum;

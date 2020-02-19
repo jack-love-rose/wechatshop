@@ -1,7 +1,7 @@
 package com.imooc.wechatshop.handler;
 
 
-import com.imooc.wechatshop.VO.ResultVO;
+import com.imooc.wechatshop.vo.ResultVO;
 import com.imooc.wechatshop.config.ProjectUrlConfig;
 import com.imooc.wechatshop.exception.ResponseBankException;
 import com.imooc.wechatshop.exception.SellerAuthorizeException;

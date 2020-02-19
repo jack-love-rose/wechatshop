@@ -1,4 +1,4 @@
-package com.imooc.wechatshop.VO;
+package com.imooc.wechatshop.vo;
 
 import lombok.Data;
 

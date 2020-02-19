@@ -1,4 +1,4 @@
-package com.imooc.wechatshop.VO;
+package com.imooc.wechatshop.vo;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
