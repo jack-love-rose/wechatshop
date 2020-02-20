@@ -116,6 +116,7 @@ public class SellerProductController {
      * redis注解 还可以在类上加 @CacheConfig(cacheNames = "product") 这样下面的注解就都不用写cacheNames了
      * key如果不填写的话：无参方法默认为空，有参方法默认为第一个参数得值作为key
      * key还可以用方法中的参数来注入称为spel表达式 用#参数名称
+     * @Cacheable注解不支持配置过期时间，所有需要通过配置CacheManneg来配置默认的过期时间和针对每个类或者是方法进行缓存失效时间配置。
      * 保存/更新
      * @param form
      * @param bindingResult

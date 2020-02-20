@@ -34,6 +34,8 @@ public class BuyerProductController {
      *  key还可以用方法中的参数来注入称为spel表达式 用#参数名称
      *  condition参数可以加一些条件 比如参数为productId方法 condition = "#productId.length()>3" 表示这个参数得长度大于三的情况下才缓存
      *  unless参数对方法整体的返回值做一些约束 用#result代表方法返回值 比如 unless = "#result.getCode()!=0" unless是如果不的意思 双重否定=肯定所以用 !=0
+     *
+     *  @Cacheable注解不支持配置过期时间，所有需要通过配置CacheManneg来配置默认的过期时间和针对每个类或者是方法进行缓存失效时间配置。
      * @return
      */
     @Cacheable(cacheNames = "product",key = "123") //这个注解放上了之后只访问一次这个方法 以后就访问redis了，如果没有对应的key就会访问这个方法
