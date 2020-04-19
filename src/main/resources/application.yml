@@ -21,7 +21,7 @@ wechat:
   mchId: 3
   mchKey: 4
   keyPath: 5 #退款用
-  notifyUrl: http://����/pay/notify
+  notifyUrl: http://wechatshop/pay/notify
   templateId: # 微信推送消息模板id，模板可以有多种样式,下面这个是订单的模板
     orderStatus: 133
 project-url-config:
