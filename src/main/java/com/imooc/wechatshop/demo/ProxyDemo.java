@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 /**
- * 代理1
+ * 代理
  */
 public class ProxyDemo {
 
