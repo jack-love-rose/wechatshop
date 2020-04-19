@@ -26,7 +26,6 @@ public class WechatExceptionHandler {
     //拦截登录异常
     //http://sell.natapp4.cc/sell/wechat/qrAuthorize?returnUrl=http://sell.natapp4.cc/sell/seller/login
     @ExceptionHandler(value = SellerAuthorizeException.class)
-//    @ResponseStatus(HttpStatus.FORBIDDEN)
     public ModelAndView handlerAuthorizeException() {
         return new ModelAndView("redirect:"
         .concat(projectUrlConfig.getWechatOpenAuth())
@@ -45,7 +44,6 @@ public class WechatExceptionHandler {
     /**
      * 比如这里要求抛异常了之后返回的状态码不能是200 那么可以用这个注解或者引用httpresponse
      * */
-    //@ResponseStatus(HttpStatus.FORBIDDEN)
     @ExceptionHandler(value = ResponseBankException.class)
     @ResponseStatus(HttpStatus.FORBIDDEN)
     public void handleResponseBankException() {
