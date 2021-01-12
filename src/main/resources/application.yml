@@ -1,3 +1,7 @@
+server:
+  port: 8989
+  tomcat:
+    min-spare-threads: 50
 spring:
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
@@ -10,8 +14,22 @@ spring:
   freemarker:
     suffix: .ftl #springboot 2.0.x 将freemaker的.ftl 改为.ftlh了
   redis:
+    database: 1
     host: 47.106.245.51
     port: 6379
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+        max-idle: 10
+        min-idle: 0
+    password: 123456
+  rabbitmq:
+    username: fenxiang-user
+    password: fenxiang0102
+    virtual-host: /fenxiang-user
+    host: 49.233.42.108
+    port: 5672
 
 wechat:
   mpAppId: 1 #微信公众号
@@ -28,6 +46,3 @@ project-url-config:
   wechatMpAuth: http://localhost:8080/sell
   wechatOpenAuth: http://localhost:8080/sell
   sell: http://localhost:8080/sell
-server:
-  servlet:
-    context-path: /sell

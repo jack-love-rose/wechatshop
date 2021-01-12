@@ -1,13 +1,25 @@
 package com.imooc.wechatshop.demo;
 
 
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.time.FastDateFormat;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+import java.util.TimeZone;
 
 /**
  * 各种排序算法
  */
 @Slf4j
 public class SortAlgorithm {
+
+    private static final FastDateFormat formatter = FastDateFormat.getInstance("yyyy-MM-dd HH:mm:ss", TimeZone.getDefault(), Locale.getDefault());
+    private static final FastDateFormat format = FastDateFormat.getInstance("yyyy-MM-dd'T'HH:mm:ss.SSS'+'");
 
     /**
      * 待排序数组
@@ -125,13 +137,37 @@ public class SortAlgorithm {
         return array;
     }
 
+
+    //时间转换
+    public void str2Date(String strDate){
+
+//        String time = "";
+//        try {
+//            DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+//            Date date = df.parse(strDate);
+//            SimpleDateFormat df1 = new SimpleDateFormat ("EEE MMM dd HH:mm:ss Z yyyy", Locale.US);
+//            Date date1 =  df1.parse(date.toString());
+//            DateFormat df2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//            time = df2.format(date1);
+//            time = date.toString();
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//        }
+//        System.out.println(time);
+
+        try {
+            String time = formatter.format(format.parse(strDate));
+            System.out.println(time);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void main(String[] args) {
         SortAlgorithm sortAlgorithm = new SortAlgorithm();
-
+        sortAlgorithm.str2Date("2019-10-28T15:24:09.000+0800");
 //        sortAlgorithm.bubbleSort2(sortAlgorithm.sortArray);
-
-        sortAlgorithm.selectSort(sortAlgorithm.sortArray);
-
+//        sortAlgorithm.selectSort(sortAlgorithm.sortArray);
 //        int[] array = sortAlgorithm.insertSort(sortAlgorithm.sortArray);
 //        for (int i = 0; i < array.length; i++) {
 //            System.out.print(array[i]);

@@ -1,10 +1,10 @@
 package com.imooc.wechatshop.redislock;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
-import org.springframework.util.StringUtils;
 
 /**
  * 首先方法上加 synchronized关键字是能解决秒杀活动时超卖现象的，但是并发情况下性能堪忧
@@ -33,11 +33,10 @@ public class RedisLock {
         //currentValue=A   这两个线程的value都是B  其中一个线程拿到锁
         String currentValue = redisTemplate.opsForValue().get(key);
         //如果锁过期
-        if (!StringUtils.isEmpty(currentValue)
-                && Long.parseLong(currentValue) < System.currentTimeMillis()) {
+        if (StringUtils.isNotBlank(currentValue) && Long.parseLong(currentValue) < System.currentTimeMillis()) {
             //获取上一个锁的时间
             String oldValue = redisTemplate.opsForValue().getAndSet(key, value);
-            if (!StringUtils.isEmpty(oldValue) && oldValue.equals(currentValue)) {
+            if (StringUtils.isNotBlank(oldValue) && oldValue.equals(currentValue)) {
                 return true;
             }
         }
